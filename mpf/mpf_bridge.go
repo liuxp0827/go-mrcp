@@ -113,7 +113,7 @@ func LinearBridgeCreate(source, sink *AudioStream, codecManager *CodecManager, n
 		return nil, err
 	}
 	if err = sink.AudioStreamTXOpen(nil); err != nil {
-		source.AudioStreamRXClose()
+		_ = source.AudioStreamRXClose()
 		return nil, err
 	}
 
